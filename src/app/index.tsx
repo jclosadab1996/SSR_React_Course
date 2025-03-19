@@ -1,15 +1,18 @@
 import React from 'react';
-import { StyledAstronaut } from './styles';
+import { hydrateRoot } from 'react-dom/client';
+import { App } from './containers/App';
+import { BrowserRouter } from 'react-router-dom';
 
-const ASTRONAUT_IMAGE = "https://i.imgur.com/tBkWIfP.png"
+import './assets/favicon.ico'
 
-export const AstronautSection = () => {
-  return (
-    <StyledAstronaut>
-      <div className="background" />
-      <div className="picture">
-        <img src={ASTRONAUT_IMAGE} alt="astronaut ilustration" />
-      </div>
-    </StyledAstronaut>
-  )
-}
+const container = document.getElementById('app');
+
+const initialProps = window.__INITIAL_PROPS__
+
+
+hydrateRoot(
+  container,
+  <BrowserRouter>
+    <App {...initialProps}/>
+  </BrowserRouter>
+)

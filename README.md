@@ -1,1 +1,20 @@
-# SSR_React_Course
+# Helix Eye
+
+### Install dependencies
+
+```
+yarn 
+```
+
+### Development
+
+```
+yarn dev
+```
+
+
+### Production
+
+```
+yarn start
+```
